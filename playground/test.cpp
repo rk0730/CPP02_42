@@ -62,13 +62,17 @@ int main()
 {
 	MyClass b1; // デフォルトコンストラクタ
 	b1.setData("Hello, World!");
+	b1.print();
 
 	// ケース1: コピーコンストラクタが呼ばれる
 	MyClass a1 = b1;
+	a1.print();
 
 	// ケース2: デフォルトコンストラクタ + コピー代入演算子が呼ばれる
 	MyClass a2;
-	a2 = b1;
+	a2.print();
+	a2 = a2;
+	a2.print();
 
 	return 0;
 }
