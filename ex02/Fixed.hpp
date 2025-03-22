@@ -24,6 +24,10 @@ public:
 	bool operator<=(const Fixed &other) const;
 	bool operator==(const Fixed &other) const;
 	bool operator!=(const Fixed &other) const;
+	float operator+(const Fixed &other) const;
+	float operator-(const Fixed &other) const;
+	float operator*(const Fixed &other) const;
+	float operator/(const Fixed &other) const;
 
 private:
 	int value;

@@ -2,8 +2,8 @@
 
 int main(void)
 {
-	Fixed a(10.11f);
-	Fixed const b(10.10f);
+	Fixed a(10);
+	Fixed const b(3.3f);
 
 
 
@@ -19,6 +19,11 @@ int main(void)
 		std::cout << "a is equal to b" << std::endl;
 	if (a != b)
 		std::cout << "a is not equal to b" << std::endl;
+	
+	std::cout << "a + b = " << a + b << std::endl;
+	std::cout << "a - b = " << a - b << std::endl;
+	std::cout << "a * b = " << a * b << std::endl;
+	std::cout << "a / b = " << a / b << std::endl;
 		
 	return 0;
 }
