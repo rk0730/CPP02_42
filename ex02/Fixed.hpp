@@ -18,6 +18,12 @@ public:
 	float toFloat(void) const;
 	int toInt(void) const;
 	friend std::ostream &operator<<(std::ostream &out, const Fixed &fixed);
+	bool operator>(const Fixed &other) const;
+	bool operator<(const Fixed &other) const;
+	bool operator>=(const Fixed &other) const;
+	bool operator<=(const Fixed &other) const;
+	bool operator==(const Fixed &other) const;
+	bool operator!=(const Fixed &other) const;
 
 private:
 	int value;
