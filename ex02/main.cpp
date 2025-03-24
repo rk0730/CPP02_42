@@ -24,6 +24,9 @@ int main(void)
 	std::cout << "a - b = " << a - b << std::endl;
 	std::cout << "a * b = " << a * b << std::endl;
 	std::cout << "a / b = " << a / b << std::endl;
+	
+	Fixed plus = a + b;
+	std::cout << "a + b = " << plus << std::endl;
 		
 	return 0;
 }
