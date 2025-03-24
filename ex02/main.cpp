@@ -27,6 +27,16 @@ int main(void)
 	
 	Fixed plus = a + b;
 	std::cout << "a + b = " << plus << std::endl;
+	
+	std::cout << a << std::endl;
+	std::cout << ++a << std::endl;
+	std::cout << a << std::endl;
+	std::cout << a++ << std::endl;
+	std::cout << a << std::endl;
+	std::cout << --a << std::endl;
+	std::cout << a << std::endl;
+	std::cout << a-- << std::endl;
+	std::cout << a << std::endl;
 		
 	return 0;
 }

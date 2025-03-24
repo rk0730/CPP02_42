@@ -114,3 +114,29 @@ Fixed Fixed::operator/(const Fixed &other) const
 	result.setRawBits((this->getRawBits() << fractional_bits) / other.getRawBits());
 	return result.toFloat();
 }
+
+Fixed &Fixed::operator++()
+{
+	value++;
+	return *this;
+}
+
+Fixed Fixed::operator++(int)
+{
+	Fixed tmp = *this;
+	value++;
+	return tmp;
+}
+
+Fixed &Fixed::operator--()
+{
+	value--;
+	return *this;
+}
+
+Fixed Fixed::operator--(int)
+{
+	Fixed tmp = *this;
+	value--;
+	return tmp;
+}
