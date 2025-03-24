@@ -3,7 +3,8 @@
 const int Fixed::fractional_bits = 8;
 
 Fixed::Fixed() : value(0)
-{}
+{
+}
 
 Fixed::Fixed(const int value)
 {
@@ -28,7 +29,8 @@ Fixed &Fixed::operator=(const Fixed &other)
 }
 
 Fixed::~Fixed()
-{}
+{
+}
 
 int Fixed::getRawBits() const
 {
@@ -139,4 +141,36 @@ Fixed Fixed::operator--(int)
 	Fixed tmp = *this;
 	value--;
 	return tmp;
+}
+
+Fixed &Fixed::min(Fixed &f1, Fixed &f2)
+{
+	if (f1 < f2)
+		return f1;
+	else
+		return f2;
+}
+
+Fixed &Fixed::max(Fixed &f1, Fixed &f2)
+{
+	if (f1 > f2)
+		return f1;
+	else
+		return f2;
+}
+
+const Fixed &Fixed::min(const Fixed &f1, const Fixed &f2)
+{
+	if (f1 < f2)
+		return f1;
+	else
+		return f2;
+}
+
+const Fixed &Fixed::max(const Fixed &f1, const Fixed &f2)
+{
+	if (f1 > f2)
+		return f1;
+	else
+		return f2;
 }
