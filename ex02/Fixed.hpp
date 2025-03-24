@@ -17,7 +17,6 @@ public:
 	void setRawBits(int const raw);
 	float toFloat(void) const;
 	int toInt(void) const;
-	friend std::ostream &operator<<(std::ostream &out, const Fixed &fixed);
 	bool operator>(const Fixed &other) const;
 	bool operator<(const Fixed &other) const;
 	bool operator>=(const Fixed &other) const;
@@ -41,5 +40,7 @@ private:
 	int value;
 	static const int fractional_bits;
 };
+
+std::ostream &operator<<(std::ostream &out, const Fixed &fixed);
 
 #endif
