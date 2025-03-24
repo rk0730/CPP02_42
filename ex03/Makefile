@@ -4,6 +4,8 @@ CFLAGS := -std=c++98 -Wall -Wextra -Werror
 SRCDIR := .
 SRCS += $(SRCDIR)/main.cpp
 SRCS += $(SRCDIR)/Fixed.cpp
+SRCS += $(SRCDIR)/Point.cpp
+SRCS += $(SRCDIR)/bsp.cpp
 
 NAME = a.out
 
