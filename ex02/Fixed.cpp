@@ -87,28 +87,28 @@ bool Fixed::operator!=(const Fixed &other) const
 	return !(*this == other);
 }
 
-float Fixed::operator+(const Fixed &other) const
+Fixed Fixed::operator+(const Fixed &other) const
 {
 	Fixed result;
 	result.setRawBits(this->getRawBits() + other.getRawBits());
 	return result.toFloat();
 }
 
-float Fixed::operator-(const Fixed &other) const
+Fixed Fixed::operator-(const Fixed &other) const
 {
 	Fixed result;
 	result.setRawBits(this->getRawBits() - other.getRawBits());
 	return result.toFloat();
 }
 
-float Fixed::operator*(const Fixed &other) const
+Fixed Fixed::operator*(const Fixed &other) const
 {
 	Fixed result;
 	result.setRawBits((this->getRawBits() * other.getRawBits()) >> fractional_bits);
 	return result.toFloat();
 }
 
-float Fixed::operator/(const Fixed &other) const
+Fixed Fixed::operator/(const Fixed &other) const
 {
 	Fixed result;
 	result.setRawBits((this->getRawBits() << fractional_bits) / other.getRawBits());
