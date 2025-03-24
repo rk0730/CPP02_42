@@ -1,25 +1,21 @@
 #include "Point.hpp"
 
-Point::Point() : x(0), y(0)
+Point::Point() : x(Fixed(0)), y(Fixed(0))
 {
 }
 
-Point::Point(const Fixed x, const Fixed y) : x(x), y(y)
+Point::Point(const float x, const float y) : x(Fixed(x)), y(Fixed(y))
 {
 }
 
-Point::Point(const Point &other)
+Point::Point(const Point &other) : x(other.x), y(other.y)
 {
-	operator=(other);
 }
 
 Point &Point::operator=(const Point &other)
 {
-	if (this != &other)
-	{
-		x = other.getX();
-		y = other.getY();
-	}
+	(void)other;
+	std::cout << "an assignment operator was called" << std::endl;
 	return *this;
 }
 
@@ -35,14 +31,4 @@ Fixed Point::getX() const
 Fixed Point::getY() const
 {
 	return y;
-}
-
-void Point::setX(const Fixed x)
-{
-	this->x = x;
-}
-
-void Point::setY(const Fixed y)
-{
-	this->y = y;
 }
