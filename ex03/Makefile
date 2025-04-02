@@ -1,4 +1,4 @@
-CC := g++
+CXX := c++
 CFLAGS := -std=c++98 -Wall -Wextra -Werror
 
 SRCDIR := .
@@ -8,19 +8,25 @@ SRCS += $(SRCDIR)/Point.cpp
 SRCS += $(SRCDIR)/bsp.cpp
 
 OBJDIR := objs
-OBJS = $(SRCS:$(SRCDIR)/%.c=$(OBJDIR)/%.o)
+OBJS = $(SRCS:$(SRCDIR)/%.cpp=$(OBJDIR)/%.o)
 
 NAME = a.out
 
 all: $(NAME)
 
-$(NAME): $(SRCS)
-	$(CC) $(CFLAGS) -o $@ $^
+$(NAME): $(OBJS)
+	$(CXX) $(CFLAGS) -o $@ $^
+
+$(OBJDIR)/%.o: $(SRCDIR)/%.cpp | $(OBJDIR)
+	$(CXX) $(CFLAGS) -c -MMD -MP $< -o $@
+
+$(OBJDIR):
+	mkdir -p $(OBJDIR)
 
 clean:
 	rm -rf $(OBJDIR)
 
-fclean:
+fclean: clean
 	rm -f $(NAME)
 
 re: fclean all
